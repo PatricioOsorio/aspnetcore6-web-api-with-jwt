@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiNet6.Models;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiNet6.Controllers
 {
   [EnableCors("CorsRules")]
   [Route("api/[controller]")]
   [ApiController]
+  [Authorize]
   public class ProductoController : ControllerBase
   {
     public readonly DbApiContext _dbContext;
